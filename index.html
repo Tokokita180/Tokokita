@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Produk Digital</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #666666; }
+        header { background-color: #212842; color: white; text-align: center; padding: 20px; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 20px; background: vanilla cream; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .products { display: flex; flex-wrap: wrap; justify-content: space-around; }
+        .product { width: 45%; margin: 10px; text-align: center; border: 1px solid #212842; padding: 15px; border-radius: 8px; }
+        .slider { position: relative; width: 100%; height: 300px; overflow: hidden; margin-bottom: 10px; }
+        .slides { display: flex; width: 200%; transition: transform 0.5s ease; }
+        .slide { width: 50%; flex-shrink: 0; }
+        .slide img { width: 100%; height: 300px; object-fit: cover; border-radius: 5px; }
+        .slider-buttons { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; }
+        .slider-buttons button { background: rgba(0,0,0,0.5); color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 50%; }
+        .order-instruction { margin-top: 10px; font-size: 14px; color: #FOE7D5; }
+        button { background-color: #212842; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+        button:hover { background-color: #FOE7D5; }
+        /* Responsivitas: 2 produk per baris di semua device */
+        @media (max-width: 768px) {
+            .product { width: 48%; }
+        }
+.container, .product {
+  color: white;
+}
+    </style>
+</head>
+<body>
+<header>
+
+        <h1>Selamat Datang di Toko Produk Digital Kami</h1>
+        <p>Jual produk digital Berkualitas,Bergaransi,Terpercaya Dan Aman!</p>
+    </header>
+    <div class="container">
+        <h2>Produk Kami</h2>
+        <div class="products">
+            <div class="product">
+                <div class="slider">
+                    <div class="slides" id="slides1">
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Foto+Produk+1" alt="Foto Produk 1"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Deskripsi+Produk+1" alt="Deskripsi Produk 1"></div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button onclick="prevSlide(1)">‹</button>
+                        <button onclick="nextSlide(1)">›</button>
+                    </div>
+                </div>
+                <h3>Produk Digital 1</h3>
+                <p><strong>Harga:</strong> Rp 50.000</p>
+                <p><strong>Deskripsi:</strong> E-book panduan lengkap untuk pemula. Download instan setelah pembayaran.</p>
+                <p class="order-instruction">Klik Order untuk Membeli: Anda akan diarahkan ke halaman payment. Setelah bayar, produk dikirim via email/WhatsApp.</p>
+                <button onclick="orderProduct('https://tokokita180.github.io/payment1/')">Order Sekarang</button>
+            </div>
+            <div class="product">
+                <div class="slider">
+                    <div class="slides" id="slides2">
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Foto+Produk+2" alt="Foto Produk 2"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Deskripsi+Produk+2" alt="Deskripsi Produk 2"></div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button onclick="prevSlide(2)">‹</button>
+                        <button onclick="nextSlide(2)">›</button>
+                    </div>
+                </div>
+                <h3>Produk Digital 2</h3>
+                <p><strong>Harga:</strong> Rp 75.000</p>
+                <p><strong>Deskripsi:</strong> Software aplikasi produktivitas. Lisensi digital seumur hidup.</p>
+                <p class="order-instruction">Klik Order untuk Membeli: Anda akan diarahkan ke halaman payment. Setelah bayar, produk dikirim via email/WhatsApp.</p>
+                <button onclick="orderProduct('https://tokokita180.github.io/payment1/')">Order Sekarang</button>
+            </div>
+            <div class="product">
+                <div class="slider">
+                    <div class="slides" id="slides3">
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Foto+Produk+3" alt="Foto Produk 3"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Deskripsi+Produk+3" alt="Deskripsi Produk 3"></div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button onclick="prevSlide(3)">‹</button>
+                        <button onclick="nextSlide(3)">›</button>
+                    </div>
+                </div>
+                <h3>Produk Digital 3</h3>
+                <p><strong>Harga:</strong> Rp 100.000</p>
+                <p><strong>Deskripsi:</strong> Kursus online video lengkap. Akses seumur hidup.</p>
+                <p class="order-instruction">Klik Order untuk Membeli: Anda akan diarahkan ke halaman payment. Setelah bayar, produk dikirim via email/WhatsApp.</p>
+                <button onclick="orderProduct('https://tokokita180.github.io/payment1/')">Order Sekarang</button>
+            </div>
+            <div class="product">
+                <div class="slider">
+                    <div class="slides" id="slides4">
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Foto+Produk+4" alt="Foto Produk 4"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Deskripsi+Produk+4" alt="Deskripsi Produk 4"></div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button onclick="prevSlide(4)">‹</button>
+                        <button onclick="nextSlide(4)">›</button>
+                    </div>
+                </div>
+                <h3>Produk Digital 4</h3>
+                <p><strong>Harga:</strong> Rp 125.000</p>
+                <p><strong>Deskripsi:</strong> Template desain grafis premium. File download instan.</p>
+                <p class="order-instruction">Klik Order untuk Membeli: Anda akan diarahkan ke halaman payment. Setelah bayar, produk dikirim via email/WhatsApp.</p>
+                <button onclick="orderProduct('https://tokokita180.github.io/payment1/')">Order Sekarang</button>
+            </div>
+            <div class="product">
+                <div class="slider">
+                    <div class="slides" id="slides5">
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Foto+Produk+5" alt="Foto Produk 5"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Deskripsi+Produk+5" alt="Deskripsi Produk 5"></div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button onclick="prevSlide(5)">‹</button>
+                        <button onclick="nextSlide(5)">›</button>
+                    </div>
+                </div>
+                <h3>Produk Digital 5</h3>
+                <p><strong>Harga:</strong> Rp 150.000</p>
+                <p><strong>Deskripsi:</strong> Plugin software untuk produktivitas. Update gratis.</p>
+                <p class="order-instruction">Klik Order untuk Membeli: Anda akan diarahkan ke halaman payment. Setelah bayar, produk dikirim via email/WhatsApp.</p>
+                <button onclick="orderProduct('https://tokokita180.github.io/payment1/')">Order Sekarang</button>
+            </div>
+            <div class="product">
+                <div class="slider">
+                    <div class="slides" id="slides6">
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Foto+Produk+6" alt="Foto Produk 6"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Deskripsi+Produk+6" alt="Deskripsi Produk 6"></div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button onclick="prevSlide(6)">‹</button>
+                        <button onclick="nextSlide(6)">›</button>
+                    </div>
+                </div>
+                <h3>Produk Digital 6</h3>
+                <p><strong>Harga:</strong> Rp 175.000</p>
+                <p><strong>Deskripsi:</strong> E-book resep masakan digital. Download PDF.</p>
+                <p class="order-instruction">Klik Order untuk Membeli: Anda akan diarahkan ke halaman payment. Setelah bayar, produk dikirim via email/WhatsApp.</p>
+                <button onclick="orderProduct('https://tokokita180.github.io/payment1/')">Order Sekarang</button>
+            </div>
+            <div class="product">
+                <div class="slider">
+                    <div class="slides" id="slides7">
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Foto+Produk+7" alt="Foto Produk 7"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Deskripsi+Produk+7" alt="Deskripsi Produk 7"></div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button onclick="prevSlide(7)">‹</button>
+                        <button onclick="nextSlide(7)">›</button>
+                    </div>
+                </div>
+                <h3>Produk Digital 7</h3>
+                <p><strong>Harga:</strong> Rp 200.000</p>
+                <p><strong>Deskripsi:</strong> Musik digital album lengkap. Streaming atau download.</p>
+                <p class="order-instruction">Klik Order untuk Membeli: Anda akan diarahkan ke halaman payment. Setelah bayar, produk dikirim via email/WhatsApp.</p>
+                <button onclick="orderProduct('https://tokokita180.github.io/payment1/')">Order Sekarang</button>
+            </div>
+            <div class="product">
+                <div class="slider">
+                    <div class="slides" id="slides8">
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Foto+Produk+8" alt="Foto Produk 8"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Deskripsi+Produk+8" alt="Deskripsi Produk 8"></div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button onclick="prevSlide(8)">‹</button>
+                        <button onclick="nextSlide(8)">›</button>
+                    </div>
+                </div>
+                <h3>Produk Digital 8</h3>
+                <p><strong>Harga:</strong> Rp 225.000</p>
+                <p><strong>Deskripsi:</strong> Aplikasi mobile game. Download APK.</p>
+                <p class="order-instruction">Klik Order untuk Membeli: Anda akan diarahkan ke halaman payment. Setelah bayar, produk dikirim via email/WhatsApp.</p>
+                <button onclick="orderProduct('https://tokokita180.github.io/payment1/')">Order Sekarang</button>
+            </div>
+            <div class="product">
+                <div class="slider">
+                    <div class="slides" id="slides9">
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Foto+Produk+9" alt="Foto Produk 9"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Deskripsi+Produk+9" alt="Deskripsi Produk 9"></div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button onclick="prevSlide(9)">‹</button>
+                        <button onclick="nextSlide(9)">›</button>
+                    </div>
+                </div>
+                <h3>Produk Digital 9</h3>
+                <p><strong>Harga:</strong> Rp 250.000</p>
+                <p><strong>Deskripsi:</strong> Webinar recording digital. Akses video on-demand.</p>
+                <p class="order-instruction">Klik Order untuk Membeli: Anda akan diarahkan ke halaman payment. Setelah bayar, produk dikirim via email/WhatsApp.</p>
+                <button onclick="orderProduct('https://tokokita180.github.io/payment1/')">Order Sekarang</button>
+            </div>
+            <div class="product">
+                <div class="slider">
+                    <div class="slides" id="slides10">
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Foto+Produk+10" alt="Foto Produk 10"></div>
+                        <div class="slide"><img src="https://via.placeholder.com/300x300?text=Deskripsi+Produk+10" alt="Deskripsi Produk 10"></div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button onclick="prevSlide(10)">‹</button>
+                        <button onclick="nextSlide(10)">›</button>
+                    </div>
+                </div>
+                <h3>Produk Digital 10</h3>
+                <p><strong>Harga:</strong> Rp 300.000</p>
+                <p><strong>Deskripsi:</strong> Paket bundle software dan e-book. Diskon spesial.</p>
+                <p class="order-instruction">Klik Order untuk Membeli: Anda akan diarahkan ke halaman payment. Setelah bayar, produk dikirim via email/WhatsApp.</p>
+                <button onclick="orderProduct('https://tokokita180.github.io/payment1/')">Order Sekarang</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentSlides = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0}; // Track slide index for each product
+
+        function nextSlide(productId) {
+            const slides = document.getElementById(`slides${productId}`);
+            const totalSlides = slides.children.length;
+            currentSlides[productId] = (currentSlides[productId] + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentSlides[productId] * 50}%)`;
+        }
+
+        function prevSlide(productId) {
+            const slides = document.getElementById(`slides${productId}`);
+            const totalSlides = slides.children.length;
+            currentSlides[productId] = (currentSlides[productId] - 1 + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentSlides[productId] * 50}%)`;
+        }
+
+        function orderProduct(paymentLink) {
+            window.open(paymentLink, '_blank');
+        }
+
+        // Opsional: Auto-slide setiap 5 detik (hapus jika tidak diinginkan)
+        setInterval(() => {
+            for (let i = 1; i <= 10; i++) {
+                nextSlide(i);
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
