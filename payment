@@ -3,23 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pembayaran - TOKOKITA</title>
+<title>Pembayaran - TOKOKITA DIGITAL</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+:root{
+--bg:#0b1218;
+--card:#111827;
+--primary:#145a4a;
+--primary-soft:#1f7a63;
+--text:#e5e7eb;
+--sub:#9ca3af;
+--accent:#22c55e;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+
 body{
-margin:0;
-font-family:sans-serif;
-background:#0b1218;
-color:#e5e7eb;
+background:var(--bg);
+color:var(--text);
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
 }
 
-/* CARD */
+/* BOX */
 .box{
-background:#111827;
+background:var(--card);
 padding:25px;
 border-radius:16px;
 max-width:400px;
@@ -41,8 +54,17 @@ margin:5px 0;
 
 .sub{
 font-size:13px;
-color:#9ca3af;
+color:var(--sub);
 margin-bottom:15px;
+}
+
+/* PRODUCT INFO */
+.produk{
+background:#0f1720;
+padding:10px;
+border-radius:10px;
+margin-bottom:15px;
+font-size:13px;
 }
 
 /* STEP */
@@ -50,7 +72,7 @@ margin-bottom:15px;
 text-align:left;
 font-size:13px;
 margin:10px 0;
-color:#22c55e;
+color:var(--accent);
 line-height:1.6;
 }
 
@@ -71,7 +93,7 @@ border-radius:10px;
 button{
 width:100%;
 padding:12px;
-background:#145a4a;
+background:var(--primary);
 border:none;
 border-radius:10px;
 color:white;
@@ -82,13 +104,13 @@ margin-top:10px;
 }
 
 button:hover{
-background:#1f7a63;
+background:var(--primary-soft);
 }
 
 /* NOTE */
 .note{
 font-size:12px;
-color:#9ca3af;
+color:var(--sub);
 margin-top:10px;
 }
 
@@ -96,7 +118,7 @@ margin-top:10px;
 .trust{
 margin-top:10px;
 font-size:12px;
-color:#22c55e;
+color:var(--accent);
 }
 </style>
 
@@ -111,10 +133,15 @@ color:#22c55e;
 <h2>Pembayaran QRIS</h2>
 <p class="sub">TOKOKITA DIGITAL</p>
 
+<!-- PRODUK -->
+<div class="produk" id="infoProduk">
+Memuat produk...
+</div>
+
 <div class="step">
 ✔ Scan QRIS di bawah ini<br>
-✔ Lakukan pembayaran sesuai harga<br>
-✔ Klik tombol konfirmasi
+✔ Bayar sesuai nominal<br>
+✔ Klik konfirmasi
 </div>
 
 <div class="qris">
@@ -128,26 +155,41 @@ Setelah klik tombol, kirim bukti pembayaran ke WhatsApp
 </div>
 
 <div class="trust">
-✔ Aman • ✔ Cepat • ✔ Otomatis
+✔ Aman • ✔ Cepat • ✔ Otomatis • ✔ Terpercaya
 </div>
 
 </div>
 
 <script>
+let produk = localStorage.getItem("produk");
+let harga = localStorage.getItem("harga");
+
+if(produk && harga){
+document.getElementById("infoProduk").innerHTML =
+`Produk: <b>${produk}</b><br>Harga: Rp ${harga}`;
+}else{
+document.getElementById("infoProduk").innerHTML =
+"Produk tidak ditemukan";
+}
+
 function kirimWA(){
 let pesan = encodeURIComponent(
 `Halo Admin TOKOKITA DIGITAL
 
 Saya sudah melakukan pembayaran.
 
-Mohon diproses pesanan saya.
-Saya akan kirim bukti pembayaran.`
+Produk: ${produk}
+Harga: Rp ${harga}
+
+Mohon diproses ya. Terima kasih.`
 );
 
-window.location.href=
+window.location.href =
 "https://wa.me/62895393200800?text="+pesan;
 }
 </script>
 
+</body>
+</html>
 </body>
 </html>
