@@ -5,53 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TOKOKITA DIGITAL</title>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-body{
-background:#0b1218;
-color:#e5e7eb;
+<style>
+:root{
+--bg:#0b1218;
+--card:#111827;
+--primary:#145a4a;
+--primary-soft:#1f7a63;
+--text:#e5e7eb;
+--sub:#9ca3af;
+--accent:#22c55e;
 }
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+
+body{background:var(--bg);color:var(--text);}
 
 /* HEADER */
 header{
-padding:20px;
 text-align:center;
+padding:20px;
 border-bottom:1px solid #1f2937;
-background:#0f1720;
 }
 
-.logo{
-width:70px;
-margin-bottom:10px;
-}
+.logo{width:60px;margin-bottom:10px;}
 
-header h1{
-font-size:20px;
-}
+header h1{font-size:20px;}
+header p{font-size:13px;color:var(--sub);}
 
-header p{
-font-size:13px;
-color:#9ca3af;
-}
-
-/* TRUST */
 .trust-bar{
-display:flex;
-justify-content:center;
-gap:15px;
-font-size:12px;
-color:#22c55e;
 margin-top:10px;
-flex-wrap:wrap;
+font-size:12px;
+color:var(--accent);
 }
 
 /* CONTAINER */
-.container{
-max-width:1100px;
-margin:auto;
-padding:20px;
-}
+.container{max-width:1100px;margin:auto;padding:20px;}
 
 /* GRID */
 .products{
@@ -62,16 +52,14 @@ gap:20px;
 
 /* CARD */
 .card{
-background:#111827;
+background:var(--card);
 border-radius:14px;
 overflow:hidden;
 transition:.3s;
 box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
-.card:hover{
-transform:translateY(-5px);
-}
+.card:hover{transform:translateY(-5px);}
 
 .card img{
 width:100%;
@@ -79,32 +67,27 @@ height:160px;
 object-fit:cover;
 }
 
-.card-body{
-padding:15px;
-}
+.card-body{padding:15px;}
 
-.card h3{
-font-size:15px;
-margin-bottom:8px;
-}
+.card h3{font-size:15px;margin-bottom:8px;}
 
 .price{
-color:#22c55e;
+color:var(--accent);
 font-weight:bold;
-margin-bottom:8px;
+margin-bottom:5px;
 }
 
 .desc{
 font-size:12px;
-color:#9ca3af;
-margin-bottom:10px;
+color:var(--sub);
+margin-bottom:8px;
 }
 
 /* BUTTON */
 .btn{
 width:100%;
 padding:10px;
-background:#145a4a;
+background:var(--primary);
 border:none;
 border-radius:8px;
 color:white;
@@ -112,56 +95,7 @@ font-weight:bold;
 cursor:pointer;
 }
 
-.btn:hover{
-background:#1f7a63;
-}
-
-/* MODAL */
-.modal{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-display:none;
-justify-content:center;
-align-items:center;
-}
-
-.modal-content{
-background:#111827;
-padding:20px;
-border-radius:12px;
-width:90%;
-max-width:400px;
-text-align:center;
-}
-
-.modal img{
-width:100%;
-border-radius:10px;
-background:white;
-padding:8px;
-}
-
-.close{
-margin-top:10px;
-background:#374151;
-}
-
-/* WA FLOAT */
-.wa-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-color:white;
-padding:12px 15px;
-border-radius:50px;
-font-size:14px;
-cursor:pointer;
-}
+.btn:hover{background:var(--primary-soft);}
 
 /* FOOTER */
 .footer{
@@ -181,97 +115,79 @@ margin:30px 0;
 <p>Produk Digital Otomatis & Terpercaya</p>
 
 <div class="trust-bar">
-<span>✔ Aman</span>
-<span>✔ Otomatis</span>
-<span>✔ 1-5 Menit</span>
-<span>✔ Support 24 Jam</span>
+✔ Aman • ✔ Cepat • ✔ Otomatis • ✔ Trusted
 </div>
 </header>
 
 <div class="container">
-<div class="products">
-
-<script>
-const produkList = [
-["Akun Whatsapp",5000],
-["Akun Gmail",3000],
-["All Apk Premiun",10.000],
-["Kursus Online",100000],
-["Plugin Software",125000],
-["Preset Foto",45000],
-["Script Website",150000],
-["Design Pack",80000],
-["Music Digital",70000],
-["Bundle Premium",200000],
-["Akun Premium Netflix",30000],
-["Akun Canva Pro 1 Bulan",25000]
-];
-
-document.write(produkList.map(p=>`
-<div class="card">
-<img src="https://via.placeholder.com/400x300">
-<div class="card-body">
-<h3>${p[0]}</h3>
-<div class="price">Rp ${p[1]}</div>
-<div class="desc">Produk digital berkualitas & siap pakai.</div>
-<button class="btn" onclick="checkout('${p[0]}','${p[1]}')">Beli</button>
-</div>
-</div>
-`).join(""));
-</script>
-
-</div>
-</div>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-<div class="modal-content">
-<h3>Scan QRIS</h3>
-<img src="qris-gadozo.png">
-<p style="font-size:13px;margin:10px;color:#9ca3af;">
-Setelah bayar klik konfirmasi
-</p>
-
-<button class="btn" onclick="kirimWA()">Saya Sudah Bayar</button>
-<button class="btn close" onclick="tutup()">Batal</button>
-</div>
+<div class="products" id="produk"></div>
 </div>
 
 <div class="footer">
-© TOKOKITA DIGITAL • All Rights Reserved
+© TOKOKITA DIGITAL
 </div>
 
-<div class="wa-float" onclick="waLangsung()">Chat Admin</div>
-
 <script>
-let produkDipilih="",hargaDipilih="";
+/* =========================
+EDIT PRODUK DI SINI
+========================= */
 
-function checkout(nama,harga){
-produkDipilih=nama;
-hargaDipilih=harga;
-document.getElementById("modal").style.display="flex";
-}
+const produkList = [
 
-function tutup(){
-document.getElementById("modal").style.display="none";
-}
+["Ebook Dropship",75000,"Panduan lengkap jualan dari nol","https://via.placeholder.com/400x300"],
 
-function kirimWA(){
-let pesan=encodeURIComponent(
-`Halo Admin TOKOKITA DIGITAL
+["Template Canva",60000,"100+ template siap pakai untuk bisnis","https://via.placeholder.com/400x300"],
 
-Saya sudah bayar:
-Produk: ${produkDipilih}
-Harga: Rp ${hargaDipilih}
+["Aplikasi Premium",85000,"Unlock semua fitur tanpa batas","https://via.placeholder.com/400x300"],
 
-Mohon diproses ya.`
-);
+["Kursus Online",100000,"Video belajar lengkap + mentor","https://via.placeholder.com/400x300"],
 
-window.open("https://wa.me/62895393200800?text="+pesan);
-}
+["Plugin Software",125000,"Tools produktivitas premium","https://via.placeholder.com/400x300"],
 
-function waLangsung(){
-window.open("https://wa.me/62895393200800");
+["Preset Foto",45000,"Preset aesthetic siap pakai","https://via.placeholder.com/400x300"],
+
+["Script Website",150000,"Script siap pakai untuk jualan","https://via.placeholder.com/400x300"],
+
+["Design Pack",80000,"Bundle desain premium lengkap","https://via.placeholder.com/400x300"],
+
+["Music Digital",70000,"Audio kualitas tinggi","https://via.placeholder.com/400x300"],
+
+["Bundle Premium",200000,"Paket lengkap hemat","https://via.placeholder.com/400x300"],
+
+["Video Editing Pack",90000,"Template video siap pakai","https://via.placeholder.com/400x300"],
+
+["AI Tools Premium",120000,"Akses tools AI terbaru","https://via.placeholder.com/400x300"]
+
+];
+
+/* =========================
+JANGAN DIUBAH
+========================= */
+
+document.getElementById("produk").innerHTML = produkList.map(p=>`
+<div class="card">
+
+<img src="${p[3]}">
+
+<div class="card-body">
+<h3>${p[0]}</h3>
+
+<div class="price">Rp ${p[1]}</div>
+
+<div class="desc">${p[2]}</div>
+
+<button class="btn" onclick="beli('${p[0]}','${p[1]}')">
+Beli
+</button>
+
+</div>
+</div>
+`).join("");
+
+function beli(nama,harga){
+localStorage.setItem("produk",nama);
+localStorage.setItem("harga",harga);
+window.location.href="payment.html";
 }
 </script>
 
