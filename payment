@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pembayaran - TOKOKITA</title>
+
+<style>
+body{
+margin:0;
+font-family:sans-serif;
+background:#0b1218;
+color:#e5e7eb;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+/* CARD */
+.box{
+background:#111827;
+padding:25px;
+border-radius:16px;
+max-width:400px;
+width:90%;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* LOGO */
+.logo{
+width:70px;
+margin-bottom:10px;
+}
+
+/* TITLE */
+h2{
+margin:5px 0;
+}
+
+.sub{
+font-size:13px;
+color:#9ca3af;
+margin-bottom:15px;
+}
+
+/* STEP */
+.step{
+text-align:left;
+font-size:13px;
+margin:10px 0;
+color:#22c55e;
+line-height:1.6;
+}
+
+/* QRIS */
+.qris{
+background:white;
+padding:10px;
+border-radius:12px;
+margin:15px 0;
+}
+
+.qris img{
+width:100%;
+border-radius:10px;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:12px;
+background:#145a4a;
+border:none;
+border-radius:10px;
+color:white;
+font-weight:bold;
+font-size:14px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#1f7a63;
+}
+
+/* NOTE */
+.note{
+font-size:12px;
+color:#9ca3af;
+margin-top:10px;
+}
+
+/* TRUST */
+.trust{
+margin-top:10px;
+font-size:12px;
+color:#22c55e;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<img src="logo.png" class="logo">
+
+<h2>Pembayaran QRIS</h2>
+<p class="sub">TOKOKITA DIGITAL</p>
+
+<div class="step">
+✔ Scan QRIS di bawah ini<br>
+✔ Lakukan pembayaran sesuai harga<br>
+✔ Klik tombol konfirmasi
+</div>
+
+<div class="qris">
+<img src="qris-gadozo.png">
+</div>
+
+<button onclick="kirimWA()">Saya Sudah Bayar</button>
+
+<div class="note">
+Setelah klik tombol, kirim bukti pembayaran ke WhatsApp
+</div>
+
+<div class="trust">
+✔ Aman • ✔ Cepat • ✔ Otomatis
+</div>
+
+</div>
+
+<script>
+function kirimWA(){
+let pesan = encodeURIComponent(
+`Halo Admin TOKOKITA DIGITAL
+
+Saya sudah melakukan pembayaran.
+
+Mohon diproses pesanan saya.
+Saya akan kirim bukti pembayaran.`
+);
+
+window.location.href=
+"https://wa.me/62895393200800?text="+pesan;
+}
+</script>
+
+</body>
+</html>
