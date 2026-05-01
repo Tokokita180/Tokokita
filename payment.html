@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pembayaran - TOKOKITA DIGITAL</title>
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -30,7 +29,6 @@ align-items:center;
 height:100vh;
 }
 
-/* BOX */
 .box{
 background:var(--card);
 padding:25px;
@@ -41,13 +39,11 @@ text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* LOGO */
 .logo{
 width:70px;
 margin-bottom:10px;
 }
 
-/* TITLE */
 h2{
 margin:5px 0;
 }
@@ -58,7 +54,6 @@ color:var(--sub);
 margin-bottom:15px;
 }
 
-/* PRODUCT INFO */
 .produk{
 background:#0f1720;
 padding:10px;
@@ -67,7 +62,6 @@ margin-bottom:15px;
 font-size:13px;
 }
 
-/* STEP */
 .step{
 text-align:left;
 font-size:13px;
@@ -76,7 +70,6 @@ color:var(--accent);
 line-height:1.6;
 }
 
-/* QRIS */
 .qris{
 background:white;
 padding:10px;
@@ -89,11 +82,9 @@ width:100%;
 border-radius:10px;
 }
 
-/* BUTTON */
 button{
 width:100%;
 padding:12px;
-background:var(--primary);
 border:none;
 border-radius:10px;
 color:white;
@@ -103,18 +94,27 @@ cursor:pointer;
 margin-top:10px;
 }
 
-button:hover{
+/* tombol beda warna */
+.btn-chat{
+background:#2563eb;
+}
+.btn-chat:hover{
+background:#1d4ed8;
+}
+
+.btn-bayar{
+background:var(--primary);
+}
+.btn-bayar:hover{
 background:var(--primary-soft);
 }
 
-/* NOTE */
 .note{
 font-size:12px;
 color:var(--sub);
 margin-top:10px;
 }
 
-/* TRUST */
 .trust{
 margin-top:10px;
 font-size:12px;
@@ -133,25 +133,26 @@ color:var(--accent);
 <h2>Pembayaran QRIS</h2>
 <p class="sub">TOKOKITA DIGITAL</p>
 
-<!-- PRODUK -->
 <div class="produk" id="infoProduk">
 Memuat produk...
 </div>
 
 <div class="step">
-✔ Scan QRIS di bawah ini<br>
-✔ Bayar sesuai nominal<br>
-✔ Klik konfirmasi
+✔ Chat admin dulu (opsional)<br>
+✔ Scan QRIS jika sudah deal<br>
+✔ Klik konfirmasi setelah bayar
 </div>
 
 <div class="qris">
 <img src="qris-gadozo.png">
 </div>
 
-<button onclick="kirimWA()">Saya Sudah Bayar</button>
+<!-- 2 TOMBOL -->
+<button class="btn-chat" onclick="chatAdmin()">Chat Admin (Sebelum Bayar)</button>
+<button class="btn-bayar" onclick="kirimWA()">Saya Sudah Bayar</button>
 
 <div class="note">
-Setelah klik tombol, kirim bukti pembayaran ke WhatsApp
+Disarankan chat admin terlebih dahulu untuk konfirmasi stok / layanan
 </div>
 
 <div class="trust">
@@ -172,6 +173,24 @@ document.getElementById("infoProduk").innerHTML =
 "Produk tidak ditemukan";
 }
 
+// CHAT SEBELUM BAYAR
+function chatAdmin(){
+let pesan = encodeURIComponent(
+`Halo Admin TOKOKITA DIGITAL
+
+Saya ingin melakukan pembelian.
+
+Produk: ${produk}
+Harga: Rp ${harga}
+
+Mohon konfirmasi terlebih dahulu sebelum saya melakukan pembayaran. Terima kasih.`
+);
+
+window.location.href =
+"https://wa.me/62895393200800?text="+pesan;
+}
+
+// SETELAH BAYAR
 function kirimWA(){
 let pesan = encodeURIComponent(
 `Halo Admin TOKOKITA DIGITAL
@@ -181,7 +200,7 @@ Saya sudah melakukan pembayaran.
 Produk: ${produk}
 Harga: Rp ${harga}
 
-Mohon diproses ya. Terima kasih.`
+Berikut bukti pembayaran saya. Mohon diproses ya. Terima kasih.`
 );
 
 window.location.href =
@@ -189,7 +208,5 @@ window.location.href =
 }
 </script>
 
-</body>
-</html>
 </body>
 </html>
