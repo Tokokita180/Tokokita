@@ -18,9 +18,17 @@
 --accent:#22c55e;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
 
-body{background:var(--bg);color:var(--text);}
+body{
+background:var(--bg);
+color:var(--text);
+}
 
 /* HEADER */
 header{
@@ -29,10 +37,19 @@ padding:20px;
 border-bottom:1px solid #1f2937;
 }
 
-.logo{width:200px;margin-bottom:10px;}
+.logo{
+width:200px;
+margin-bottom:10px;
+}
 
-header h1{font-size:20px;}
-header p{font-size:13px;color:var(--sub);}
+header h1{
+font-size:20px;
+}
+
+header p{
+font-size:13px;
+color:var(--sub);
+}
 
 .trust-bar{
 margin-top:10px;
@@ -41,7 +58,11 @@ color:var(--accent);
 }
 
 /* CONTAINER */
-.container{max-width:1100px;margin:auto;padding:20px;}
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
 
 /* GRID */
 .products{
@@ -59,7 +80,9 @@ transition:.3s;
 box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
-.card:hover{transform:translateY(-5px);}
+.card:hover{
+transform:translateY(-5px);
+}
 
 .card img{
 width:100%;
@@ -67,9 +90,14 @@ height:160px;
 object-fit:cover;
 }
 
-.card-body{padding:15px;}
+.card-body{
+padding:15px;
+}
 
-.card h3{font-size:15px;margin-bottom:8px;}
+.card h3{
+font-size:15px;
+margin-bottom:8px;
+}
 
 .price{
 color:var(--accent);
@@ -95,7 +123,9 @@ font-weight:bold;
 cursor:pointer;
 }
 
-.btn:hover{background:var(--primary-soft);}
+.btn:hover{
+background:var(--primary-soft);
+}
 
 /* FOOTER */
 .footer{
@@ -111,7 +141,9 @@ margin:30px 0;
 
 <header>
 <img src="logo.PNG" class="logo">
+
 <h1>TOKOKITA DIGITAL</h1>
+
 <p>Produk Digital Otomatis & Terpercaya</p>
 
 <div class="trust-bar">
@@ -128,35 +160,36 @@ margin:30px 0;
 </div>
 
 <script>
+
 /* =========================
 EDIT PRODUK DI SINI
 ========================= */
 
 const produkList = [
 
-["Ebook Dropship",75000,"Panduan lengkap jualan dari nol","https://via.placeholder.com/400x300"],
+["Akun Sosmed",2000,"Akun Fress Baru Buat","https://via.placeholder.com/400x300"],
 
-["Template Canva",60000,"100+ template siap pakai untuk bisnis","https://via.placeholder.com/400x300"],
+["Jasa Ulas GMAPS",5000,"Aman Tidak Terdeteksi Dan Nama Asli","https://via.placeholder.com/400x300"],
 
-["Aplikasi Premium",85000,"Unlock semua fitur tanpa batas","https://via.placeholder.com/400x300"],
+["AKUN WA SAVE",7000,"Sudah Save 1 MINGGU","https://via.placeholder.com/400x300"],
 
-["Kursus Online",100000,"Video belajar lengkap + mentor","https://via.placeholder.com/400x300"],
+["Aplikasi AI Premium",2000,"Premium Tanpa Batasan","https://via.placeholder.com/400x300"],
 
-["Plugin Software",125000,"Tools produktivitas premium","https://via.placeholder.com/400x300"],
+["Aplikasi Nonton Premium",2000,"Aman,Privat,Bergaransi","https://via.placeholder.com/400x300"],
 
-["Preset Foto",45000,"Preset aesthetic siap pakai","https://via.placeholder.com/400x300"],
+["Aplikasi EDIT Premium",1000,"Aman,Cepat,Bergaransi","https://via.placeholder.com/400x300"],
 
-["Script Website",150000,"Script siap pakai untuk jualan","https://via.placeholder.com/400x300"],
+["Paket Like&Share Sosmed",1000,"Aman,Cepat,Bergaransi","https://via.placeholder.com/400x300"],
 
-["Design Pack",80000,"Bundle desain premium lengkap","https://via.placeholder.com/400x300"],
+["Jasa Isi Quesioner",700,"Cepat,Data Valid,respon bisa req","https://via.placeholder.com/400x300"],
 
-["Music Digital",70000,"Audio kualitas tinggi","https://via.placeholder.com/400x300"],
+["Jasa Buat WEBSITE",50000,"Bisa REQ Sesuai Keinginan","https://via.placeholder.com/400x300"],
 
-["Bundle Premium",200000,"Paket lengkap hemat","https://via.placeholder.com/400x300"],
+["Topup ALL Game",1000,"Aman,Cepat,Bergaransi","https://via.placeholder.com/400x300"],
 
-["Video Editing Pack",90000,"Template video siap pakai","https://via.placeholder.com/400x300"],
+["Followers ALL Sosmed",1000,"Aman,Privat,Bergaransi","https://via.placeholder.com/400x300"],
 
-["AI Tools Premium",120000,"Akses tools AI terbaru","https://via.placeholder.com/400x300"]
+["Jasa EDIT LOGO ATAU FOTO",1000,"Cepat,Bisa REQ,Sesuai Keinginan","https://via.placeholder.com/400x300"]
 
 ];
 
@@ -170,9 +203,12 @@ document.getElementById("produk").innerHTML = produkList.map(p=>`
 <img src="${p[3]}">
 
 <div class="card-body">
+
 <h3>${p[0]}</h3>
 
-<div class="price">Rp ${p[1]}</div>
+<div class="price">
+Harga mulai dari Rp ${p[1].toLocaleString('id-ID')}
+</div>
 
 <div class="desc">${p[2]}</div>
 
@@ -189,7 +225,9 @@ localStorage.setItem("produk",nama);
 localStorage.setItem("harga",harga);
 window.location.href="payment.html";
 }
+
 </script>
 
 </body>
+</html>
 </html>
